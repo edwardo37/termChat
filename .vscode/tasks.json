@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "termChat task: CMake Configure",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--preset", "${config:termChat.platform}-${config:termChat.compiler}-${config:termChat.buildType}"
+            ]
+        },
+        {
+            "label": "termChat task: CMake Build",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build", "./out/build/${config:termChat.platform}-${config:termChat.compiler}-${config:termChat.buildType}"
+            ]
+        },
+        {
+            "label": "termChat task: Configure and build termChat",
+            "type": "shell",
+            "dependsOn":[
+                "termChat task: CMake Configure", "termChat task: CMake Build"
+            ]
+        }
+    ]
+}

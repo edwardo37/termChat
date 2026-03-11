@@ -1,0 +1,17 @@
+{
+    "termChat.buildType": "debug",
+    "termChat.compiler": "gcc",
+    "termChat.platform": "msys-ucrt64",
+
+    // "termChat.buildType": "release",
+    // "termChat.compiler": "gcc",
+    // "termChat.platform": "msys-ucrt64",
+
+    // "termChat.buildType": "debug",
+    // "termChat.compiler": "gcc",
+    // "termChat.platform": "linux"
+
+    // "termChat.buildType": "release",
+    // "termChat.compiler": "gcc",
+    // "termChat.platform": "linux",
+}
