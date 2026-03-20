@@ -1,0 +1,28 @@
+! Make move cursor & print messages thread safe
+- Viewport: make members private, move the move cursor methods to viewport, move viewport to view
+- Add thread to listen for input
+- Proper error handling
+? Make individual controllers for each model and view pair?
+! Create command struct to send between clients and validate
+- Make MessageHistoryView::renderMessageHistory() only print what's different, avoiding redraw if possible
+	- Call renderMessageHistory() less to reduce flickering for now
+- Figure out how to copy DLLs after building for Windows
+? Clean up includes if needed
+- Ncurses: Add function to translate raw escape codes to int for readability
+- Cleanup message history to hide iterators and such
+? Find another socket library for non-blocking sockets. Needed for multiplexing sockets via std::thread
+- Add config for settings like port
+- Add h to n endianness converter
+- Add process-specific hash to TC_COM_STOP check to prevent malicious packets from other instances
+
+
+
+X - Move all ncurses functionality to view -- add init functions to be called by app's controller
+X - App should be the only singleton
+X - Apply PIMPL to view?
+X ! Stick cursor to bottommost message
+X ! Fix move cursor up function!
+X ! Correctly account for line going offscreen with highlight
+	X - print from bottom up since messages are appended to bottom
+	X - render only when input rendered or other information recieved
+X - Up decrements line selection, down increments
