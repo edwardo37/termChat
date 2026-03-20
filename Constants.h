@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include <cstdint>
+
 namespace termChat
 {
     typedef enum
@@ -28,4 +30,14 @@ namespace termChat
         KeyCode code;
         char c; // Only usable if (code == TC_KEY_CHAR)
     };
+
+    typedef enum : uint32_t
+    {
+        TC_COM_SAY,
+        TC_COM_ALIAS,
+        TC_COM_EXIT,
+        TC_COM_CONNECT,
+        TC_COM_DISCONNECT,
+        TC_COM_STOP
+    } Command;
 }
